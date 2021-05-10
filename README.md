@@ -1,6 +1,6 @@
 # QOL (JET v1.1.1)
 ------------------
-Version 0.0.1
+Version 1.0.0
 by King
 
 # What is QOL?
