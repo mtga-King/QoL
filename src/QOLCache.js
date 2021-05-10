@@ -83,13 +83,11 @@ exports.mod = (mod_info) => {
 			logger.logInfo(`   [MOD] -- User Set Exfil Timers: Set`);
 		}
 		if (config.UnlockExfils.UnlockExfiltrationType == true){
-			if (locationfile[map].base.exits[exf].PassageRequirement !== "WorldEvent"){
-				logger.logInfo(`   [MOD] -- Exfils: Unlocked`);
-			}
-		}else {
+			logger.logInfo(`   [MOD] -- Exfils: Unlocked`);
+			}else {
 			logger.logInfo(`   [MOD] -- Exfils: Default`);
 		}
-		if (config.RemovePassageRequirement == true || locationfile[map].base.exits[exf].PassageRequirement !== "WorldEvent"){
+		if (config.RemovePassageRequirement == true){
 			logger.logInfo(`   [MOD] -- Passages: Unlocked`);
 		}					
 

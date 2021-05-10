@@ -10,25 +10,21 @@ exports.mod = (mod_info) => {
 
 	//Config.node Loop
 	for (let cfg in _config){
-
 		//Deployment Timer Config
-
 		if (config.InstantDeploy == true){ //if true
 			if(_config[cfg].TimeBeforeDeploy != 0){ //if TimeBeforeDeploy doesn't equal 0 (zero)
 				_config[cfg].TimeBeforeDeploy = 0 //then make it equal 0 (zero)
 			}
 			if(_config[cfg].TimeBeforeDeployLocal != 0){ //if TimeBeforeDeploy doesn't yadayada
 				_config[cfg].TimeBeforeDeployLocal = 0 //make 0 (zero)
-
-				logger.logInfo(`   [MOD] -- Instant Deploy: ON`); 
-			} else { //if false, reset to default
+			} 
+		}	else { //if false, reset to default
 				if(_config[cfg].TimeBeforeDeploy != 0){
 					_config[cfg].TimeBeforeDeploy = 20
 				}
 				if(_config[cfg].TimeBeforeDeployLocal != 0){
 					_config[cfg].TimeBeforeDeployLocal = 10
 				}
-				logger.logInfo(`   [MOD] -- Instant Deploy: OFF`);
 			}
 
 			//Remove Item Limit Restrictions
@@ -36,7 +32,6 @@ exports.mod = (mod_info) => {
 			if (config.RemoveRestrictionLimitsInRaid == true){
 				_config[cfg].RestrictionsInRaid = []; //remove restrictions
 
-				logger.logInfo(`   [MOD] -- RestrictionLimitsInRaid: Edited`);
 			} else { //reset Restrictions
 				_config[cfg].RestrictionsInRaid = [
 					{
@@ -276,30 +271,35 @@ exports.mod = (mod_info) => {
 						"Value": 3
 					}
 				];
-				logger.logInfo(`   [MOD] -- RestrictionLimitsInRaid: Default`);
 			}
-		}
+		} //end loop
 
 		let _match_end = _config.exp.match_end; //match_end node var
 
 		for (let exp in _match_end){ //match_end node loop
 			
-			if (config.RunThroughRequirement.EditRunThrough == true){
+			if (config.RunThroughRequirement.EditRunThrough === true){
 				_match_end[exp].survived_exp_requirement = config.RunThroughRequirement.NewRunThroughExp;
 				_match_end[exp].survived_seconds_requirement = config.RunThroughRequirement.NewRunThroughTime;
 				_match_end[exp].survivedMult = 0.75; //edit multiplier so people don't abuse the extra exp for surviving
-
-				logger.logInfo(`   [MOD] -- RunThroughRequirements: Edited`);
 			} else { //if false, reset to defaults
 				_match_end[exp].survived_exp_requirement = 300;
 				_match_end[exp].survived_seconds_requirement = 600;
 				_match_end[exp].survivedMult = 1.5;
-
-				logger.logInfo(`   [MOD] -- RunThroughRequirements: Default`);
 			}
-		}
+		} //match_end end loop
 
+//Checks
+	if (config.RemoveRestrictionLimitsInRaid == true){
+		logger.logInfo(`   [MOD] -- RestrictionLimitsInRaid: Edited`);
+	}		else {
+		logger.logInfo(`   [MOD] -- RestrictionLimitsInRaid: Default`);
+	}
 
+	if (config.RunThroughRequirement.EditRunThrough == true){
+		logger.logInfo(`   [MOD] -- RunThroughRequirements: Edited`);
+	} else {
+		logger.logInfo(`   [MOD] -- RunThroughRequirements: Default`);
 	}
 
     
