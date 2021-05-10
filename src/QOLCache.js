@@ -3,7 +3,7 @@ exports.mod = (mod_info) => {
 
 	//Load Settings from Config.json
 	const config = require("../config.js");
-	const traders = ["5ac3b934156ae10c4430e83c.json", "579dc571d53a0658a154fbec.json", "nugent.json"];
+	const traders = ["5ac3b934156ae10c4430e83c", "579dc571d53a0658a154fbec", "nugent"];
 
 	let locationfile = fileIO.readParsed(db.user.cache.locations); //var to store cache.locations.json
 	let itemfile = fileIO.readParsed(db.user.cache.items); //var to store cache.items.json
@@ -12,7 +12,7 @@ exports.mod = (mod_info) => {
 	//Unlock Cosmetics
 	if (config.UnlockCosmetics == true){
 		for (let trader in traders){
-			let shop = fileIO.readParsed('db.user.cache.customization_' + traders[trader]);
+			let shop = fileIO.readParsed('user/cache/customization_' + traders[trader] + '.json');
 			for (let req in shop.requirements) {
 				shop.requirements[req] = {
 					"loyaltyLevel": 0,
@@ -22,7 +22,7 @@ exports.mod = (mod_info) => {
 					"questRequirements": []
 				}
 			}
-			fileIO.write('db.user.cache.customization_' + traders[trader], shop)
+			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop)
 		}
 	}
 
