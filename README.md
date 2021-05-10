@@ -27,6 +27,8 @@ by King
     * `config.json`
     * `README.md`   
 
+## Changelog
+
 ## Need help?
 
 1. Join the JustEmuTarkov Discord: https://discord.gg/T66tGKa
