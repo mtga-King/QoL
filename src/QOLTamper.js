@@ -6,34 +6,32 @@ exports.mod = (mod_info) => {
 
 	//Shortcut to allow script to read/access globals.json
 	let globals = fileIO.readParsed(global.db.base.globals);
-	let _config = globals.data.config; //Config.node variable
+	//let _gbconfig = globals.data.config; //Config.node variable
 
 	//Config.node Loop
-	for (let cfg in _config){
-		//Deployment Timer Config
-		if (config.InstantDeploy == true){ //if true
-			if(_config[cfg].TimeBeforeDeploy != 0){ //if TimeBeforeDeploy doesn't equal 0 (zero)
-				_config[cfg].TimeBeforeDeploy = 0 //then make it equal 0 (zero)
+	if (config.InstantDeploy == true){ //if true
+		if(globals.data.config.TimeBeforeDeploy != 0){ //if TimeBeforeDeploy doesn't equal 0 (zero)
+			globals.data.config.TimeBeforeDeploy = 0 //then make it equal 0 (zero)
+		}
+		if(globals.data.config.TimeBeforeDeployLocal != 0){ //if TimeBeforeDeploy doesn't yadayada
+			globals.data.config.TimeBeforeDeployLocal = 0 //make 0 (zero)
+		} 
+	}	else { //if false, reset to default
+			if(globals.data.config.TimeBeforeDeploy != 0){
+				globals.data.config.TimeBeforeDeploy = 20
 			}
-			if(_config[cfg].TimeBeforeDeployLocal != 0){ //if TimeBeforeDeploy doesn't yadayada
-				_config[cfg].TimeBeforeDeployLocal = 0 //make 0 (zero)
-			} 
-		}	else { //if false, reset to default
-				if(_config[cfg].TimeBeforeDeploy != 0){
-					_config[cfg].TimeBeforeDeploy = 20
-				}
-				if(_config[cfg].TimeBeforeDeployLocal != 0){
-					_config[cfg].TimeBeforeDeployLocal = 10
-				}
+			if(globals.data.config.TimeBeforeDeployLocal != 0){
+				globals.data.config.TimeBeforeDeployLocal = 10
 			}
+		}
 
 			//Remove Item Limit Restrictions
 
-			if (config.RemoveRestrictionLimitsInRaid == true){
-				_config[cfg].RestrictionsInRaid = []; //remove restrictions
+		if (config.RemoveRestrictionLimitsInRaid == true){
+			globals.data.config.RestrictionsInRaid = []; //remove restrictions
 
-			} else { //reset Restrictions
-				_config[cfg].RestrictionsInRaid = [
+		} else { //reset Restrictions
+			globals.data.config.RestrictionsInRaid = [
 					{
 						"TemplateId": "5449016a4bdc2d6f028b456f",
 						"Value": 280000
@@ -272,22 +270,18 @@ exports.mod = (mod_info) => {
 					}
 				];
 			}
-		} //end loop
 
-		let _match_end = _config.exp.match_end; //match_end node var
-
-		for (let exp in _match_end){ //match_end node loop
-			
-			if (config.RunThroughRequirement.EditRunThrough === true){
-				_match_end[exp].survived_exp_requirement = config.RunThroughRequirement.NewRunThroughExp;
-				_match_end[exp].survived_seconds_requirement = config.RunThroughRequirement.NewRunThroughTime;
-				_match_end[exp].survivedMult = 0.75; //edit multiplier so people don't abuse the extra exp for surviving
-			} else { //if false, reset to defaults
-				_match_end[exp].survived_exp_requirement = 300;
-				_match_end[exp].survived_seconds_requirement = 600;
-				_match_end[exp].survivedMult = 1.5;
-			}
-		} //match_end end loop
+		let _match_end = globals.data.config.exp.match_end; //match_end node var
+		
+		if (config.RunThroughRequirement.EditRunThrough == true){
+			_match_end.survived_exp_requirement = config.RunThroughRequirement.NewRunThroughExp;
+			_match_end.survived_seconds_requirement = config.RunThroughRequirement.NewRunThroughTime;
+			_match_end.survivedMult = 0.75; //edit multiplier so people don't abuse the extra exp for surviving
+		} else { //if false, reset to defaults
+			_match_end.survived_exp_requirement = 300;
+			_match_end.survived_seconds_requirement = 600;
+			_match_end.survivedMult = 1.5;
+		}
 
 //Checks
 	if (config.RemoveRestrictionLimitsInRaid == true){
