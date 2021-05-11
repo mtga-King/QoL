@@ -1,6 +1,6 @@
-# QOL (JET v1.1.1)
+# QOL (Ver.1)
 ------------------
-Version 1.0.0
+for JET v1.1.1
 by King
 
 # What is QOL?
@@ -26,8 +26,6 @@ by King
     * `mod.config.json`
     * `config.json`
     * `README.md`   
-
-## Changelog
 
 ## Need help?
 
