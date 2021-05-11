@@ -6,7 +6,7 @@ by King
 # What is QOL?
  "Quality of Life" is a specific set of user experience tweaks to make game as "realistic as playable".
  
- **If you have Removin' and Customizin' and/or Instant Deploy, you can delete those individual mods because they are baked into QoL
+ **If you have `Removin' and Customizin'` and/or `Instant Deploy`, delete them.
 
 
 ## Installation
