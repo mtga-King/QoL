@@ -34,5 +34,5 @@ module.exports = {
     "RemoveContainerRestrictions": true,    //true or false, removes Secure Container and Backpack Restrictions: i.e. THICC Items Case not allowed in Backpack        
     "UnblockFoldables": true,   //true or false, removes BlocksFolding parameters: i.e Rubber Buttpad (Cache)
     "UnblockArmorVest": true,   //true or false, removes BlocksArmorVest parameters: i.e Allows Armor and Armored Rigs (Cache)
-    "UnlockCosmetics": true,    //true or false, removes Customization parameters that aren't Money: i.e Clothes that require levels
+//Temp. Disabled    "UnlockCosmetics": true,    //true or false, removes Customization parameters that aren't Money: i.e Clothes that require levels
 }

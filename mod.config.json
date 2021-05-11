@@ -1,9 +1,9 @@
 {
 	"name": "QOL",
 	"author": "King",
-	"description": "Quality Of Life tweaks so I don't have to keep resetting shit!",
+	"description": "'Quality of Life' is a specific set of user experience tweaks to make game as 'realistic as playable'.",
 	"license": "MIT",
-	"version": "1.0",
+	"version": "1.0.1",
 	"src":{ 
 		"src/QOLTamper.js": "TamperModLoad",
 		"src/QOLCache.js": "CacheModLoad"

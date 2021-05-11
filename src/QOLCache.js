@@ -16,10 +16,10 @@ exports.mod = (mod_info) => {
 			for (let req in shop.requirements) {
 				shop.requirements[req] = {
 					"loyaltyLevel": 0,
-					"profileLevel": 0,
+					"profileLevel": 1,
 					"standing": 0,
 					"skillRequirements": [],
-					"questRequirements": []
+					"questRequirements": [],
 				}
 			}
 			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop)
@@ -104,7 +104,7 @@ exports.mod = (mod_info) => {
 		//Remove Item Filters for Secure Containers and Backpacks based on _parentID
 		if (config.RemoveContainerRestrictions == true){
 			if (itemData._parent === "5448bf274bdc2dfc2f8b456a" 
-								|| itemData === "5448e53e4bdc2d60728b4567") {
+								|| itemData._parent === "5448e53e4bdc2d60728b4567") {
 			propsData.Grids[0]._props.filters = []; //0 = 1
 			}
 		}
