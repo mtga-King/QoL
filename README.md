@@ -5,6 +5,7 @@ by King
 
 # What is QOL?
  "Quality of Life" is a specific set of user experience tweaks to make game as "realistic as playable".
+ **If you have Removin' and Customizin' and/or Instant Deploy, you can delete those individual mods because they are baked into QoL
 
 
 ## Installation
@@ -17,6 +18,7 @@ by King
 5. Run your server (it should generate a new cache)
 
 * If you change a setting in `config.json`, repeat steps 2-5 above
+
 
 ## Files
 
