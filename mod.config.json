@@ -3,7 +3,7 @@
 	"author": "King",
 	"description": "Quality Of Life tweaks so I don't have to keep resetting shit!",
 	"license": "MIT",
-	"version": "0.1",
+	"version": "1.0",
 	"src":{ 
 		"src/QOLTamper.js": "TamperModLoad",
 		"src/QOLCache.js": "CacheModLoad"
