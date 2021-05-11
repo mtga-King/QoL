@@ -13,16 +13,17 @@ exports.mod = (mod_info) => {
 	if (config.UnlockCosmetics == true){
 		for (let trader in traders){
 			let shop = fileIO.readParsed('user/cache/customization_' + traders[trader] + '.json');
-			for (let req in shop.requirements) {
-				shop.requirements[req] = {
+			for (let req in shop) {
+				shop[req].requirements = {
 					"loyaltyLevel": 0,
-					"profileLevel": 1,
+					"profileLevel": 0,
 					"standing": 0,
 					"skillRequirements": [],
-					"questRequirements": [],
+					"questRequirements": []
 				}
-			}
-			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop)
+			} 
+			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop);
+
 		}
 	}
 
