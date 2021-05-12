@@ -16,12 +16,11 @@ exports.mod = (mod_info) => {
 			for (let req in shop) {
 				shop[req].requirements = {
 					"loyaltyLevel": 0,
-					"profileLevel": 0,
+					"profileLevel": 1,
 					"standing": 0,
 					"skillRequirements": [],
 					"questRequirements": [],
 					"itemRequirements": shop[req].requirements.itemRequirements //want the value to stay the same
-
 				}
 			} 
 			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop);
