@@ -34,7 +34,7 @@ by King
     * Removes BlocksArmorVest parameters: i.e Allows Armor and Armored Rigs (Cache)
 * UnlockCosmetics
     * Removes Customization parameters that aren't Money: i.e Clothes that require levels
-        * To revert back to Vanilla Customization, copy folders from `[Server Files]/src/db`, paste them into `[Server Files]/db/traders` folder, overwrite/replace, then clear cache
+        * To revert back to Vanilla Customization, make `"UnlockCosmetics": false`, then copy folders from `[Server Files]/src/db`, paste them into `[Server Files]/db/traders` folder, overwrite/replace, then clear cache
 
 
 
