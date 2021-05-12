@@ -1,4 +1,4 @@
-# QOL (Ver.1.0.1)
+# QOL (Ver.1.0.2)
 ------------------
 for JET v1.1.1
 by King
@@ -6,7 +6,7 @@ by King
 # What is QOL?
  "Quality of Life" is a specific set of user experience tweaks to make game as "realistic as playable".
  
- **If you have `Removin' and Customizin'` and/or `Instant Deploy`, delete them.
+ **If you have `Removin' and Customizin'` and/or `Instant Deploy`, delete them.**
 
 # Features Include:
 * InstantDeploy
