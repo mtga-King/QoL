@@ -48,6 +48,7 @@ by King
 6. Run your server (it should generate a new cache)
 
 * If you change a setting in `config.json`, repeat steps 3-6 above
+
 ## Files
 
 
