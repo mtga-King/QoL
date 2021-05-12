@@ -47,10 +47,9 @@ by King
 5. Delete your `server folder/user/cache` folder
 6. Run your server (it should generate a new cache)
 
-* If you change a setting in `config.json`, repeat steps 2-5 above
-
-
+* If you change a setting in `config.json`, repeat steps 3-6 above
 ## Files
+
 
 - If any of the files below are missing/misplaced, you may have to redownload/reinstall this archive:
     * `src/QOLCache.js`
