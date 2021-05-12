@@ -3,35 +3,9 @@ exports.mod = (mod_info) => {
 
 	//Load Settings from Config.json
 	const config = require("../config.js");
-	const traders = ["5ac3b934156ae10c4430e83c", "579dc571d53a0658a154fbec", "nugent"];
-
 	let locationfile = fileIO.readParsed(db.user.cache.locations); //var to store cache.locations.json
 	let itemfile = fileIO.readParsed(db.user.cache.items); //var to store cache.items.json
-
-
-	//Unlock Cosmetics
-	if (config.UnlockCosmetics == true){
-		for (let trader in traders){
-			let shop = fileIO.readParsed('user/cache/customization_' + traders[trader] + '.json');
-			for (let req in shop) {
-				shop[req].requirements = {
-					"loyaltyLevel": 0,
-					"profileLevel": 0,
-					"standing": 0,
-					"skillRequirements": [],
-					"questRequirements": [],
-					"itemRequirements": shop[req].requirements.itemRequirements //want the value to stay the same
-
-				}
-			} 
-			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop);
-
-		}
-	}
-
-	//
-
-
+	
 	//Location.json Loop
 	for (let map in locationfile){ //store locationfile data
 		
