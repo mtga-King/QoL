@@ -3,10 +3,48 @@ exports.mod = (mod_info) => {
 
 	//Load Settings from Config.json
 	const config = require("../config.js");
+	const traderID = ["5ac3b934156ae10c4430e83c", "579dc571d53a0658a154fbec", "nugent"];
 
 	//Shortcut to allow script to read/access globals.json
 	let globals = fileIO.readParsed(global.db.base.globals);
-	//let _gbconfig = globals.data.config; //Config.node variable
+
+
+	//Unlock Cosmetics
+	if (config.UnlockCosmetics == true){
+		for (let trader in traderID){
+			let shop = fileIO.readParsed('db/traders/' + traderID[trader] + '/suits.json');
+			for (let req in shop) {
+				shop[req].requirements = {
+					"loyaltyLevel": 0,
+					"profileLevel": 1,
+					"standing": 0,
+					"skillRequirements": [],
+					"questRequirements": [],
+					"itemRequirements": shop[req].requirements.itemRequirements //want the value to stay the same
+				}
+			} 
+			fileIO.write('db/traders/' + traderID[trader] + '/suits.json', shop);
+
+		}
+	}/* else {
+		for (let trader in traderID){
+			let shop = fileIO.readParsed("./db/"+traderID[trader]+"/suits.json");
+			for (let req in shop) {
+				shop[req].requirements = {
+					"loyaltyLevel": shop[req].requirements.loyaltyLevel,
+					"profileLevel": shop[req].requirements.profileLevel,
+					"standing": shop[req].requirements.standing,
+					"skillRequirements": shop[req].requirements.skillRequirements,
+					"questRequirements": shop[req].requirements.questRequirements,
+					"itemRequirements": shop[req].requirements.itemRequirements //want the value to stay the same
+				}
+			} 
+			fileIO.write('db/traders/' + traderID[trader] + '/suits.json', shop);
+		}
+	}*/
+
+
+
 
 	//Config.node Loop
 	if (config.InstantDeploy == true){ //if true

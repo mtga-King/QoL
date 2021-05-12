@@ -34,6 +34,7 @@ by King
     * Removes BlocksArmorVest parameters: i.e Allows Armor and Armored Rigs (Cache)
 * UnlockCosmetics
     * Removes Customization parameters that aren't Money: i.e Clothes that require levels
+        * To revert back to Vanilla Customization, copy folders from `[Server Files]/src/db`, paste them into `[Server Files]/db/traders` folder, overwrite/replace, then clear cache
 
 
 
@@ -50,7 +51,6 @@ by King
 * If you change a setting in `config.json`, repeat steps 3-6 above
 
 ## Files
-
 
 - If any of the files below are missing/misplaced, you may have to redownload/reinstall this archive:
     * `src/db`
