@@ -19,7 +19,9 @@ exports.mod = (mod_info) => {
 					"profileLevel": 0,
 					"standing": 0,
 					"skillRequirements": [],
-					"questRequirements": []
+					"questRequirements": [],
+					"itemRequirements": shop[req].requirements.itemRequirements //want the value to stay the same
+
 				}
 			} 
 			fileIO.write('user/cache/customization_' + traders[trader] + '.json', shop);
