@@ -3,7 +3,7 @@
 	"author": "King",
 	"description": "'Quality of Life' is a specific set of user experience tweaks to make game as 'realistic as playable'.",
 	"license": "MIT",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"src":{ 
 		"src/QOLTamper.js": "TamperModLoad",
 		"src/QOLCache.js": "CacheModLoad"
