@@ -46,7 +46,7 @@ exports.mod = (mod_info) => {
 				//Chance for Exfil to be Open
 				if (config.UnlockExfils.AlwaysExfil.EditExfilChance == true){
 					//Edit Chance for Extract to be Open
-					locationfile[map].base.exits[exf].Change = config.UnlockExfils.AlwaysExfil.NewExfilChancePercentage
+					locationfile[map].base.exits[exf].Chance = config.UnlockExfils.AlwaysExfil.NewExfilChancePercentage
 				}
 			}
 		}
