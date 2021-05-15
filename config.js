@@ -1,4 +1,4 @@
-//settings.js
+//config.js
 module.exports = {
     "InstantDeploy": true,  //(CASE-SENSITIVE) true for Instant Deploy, false for Default Deploy timer(s) (Tamper)
     
