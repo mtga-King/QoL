@@ -51,25 +51,6 @@ exports.mod = (mod_info) => {
 			}
 		}
 
-	//Loop Checks
-	if (config.ExfilTimer.EditExfilTimer == true){
-		logger.logInfo(`   [MOD] -- Exfil Timers: Editable`);
-		if (config.ExfilTimer.RealisticExfilTimers == true){
-			logger.logInfo(`   [MOD] -- Realistic Exfil Timers: Set`);
-		} else 
-			logger.logInfo(`   [MOD] -- User Set Exfil Timers: Set`);
-		}
-		if (config.UnlockExfils.UnlockExfiltrationType == true){
-			logger.logInfo(`   [MOD] -- Exfils: Unlocked`);
-			}else {
-			logger.logInfo(`   [MOD] -- Exfils: Default`);
-		}
-		if (config.RemovePassageRequirement == true){
-			logger.logInfo(`   [MOD] -- Passages: Unlocked`);
-		}					
-
-
-
 	//Item.json Loop
 	for (let ez in itemfile.data) { //Remove Item Nodes to Access _props
 
@@ -101,35 +82,8 @@ exports.mod = (mod_info) => {
 			}
 		}
 	}
-
-	//Item Loop Checks
-
-	if (config.RemoveContainerRestrictions == true){
-		logger.logInfo(`   [MOD] -- Container Restrictions: Removed`);
-	} else {
-		logger.logInfo(`   [MOD] -- Container Restrictions: Default`);
-	}
-	if (config.UnblockFoldables == true) {
-		logger.logInfo(`   [MOD] --  Weapon Folding: Unblocked`);
-	} else{
-		logger.logInfo(`   [MOD] -- Weapon Folding: Default`);
-	}
-	if (config.UnblockArmorVest == true){
-		logger.logInfo(`   [MOD] -- Armor Stacking: Unlocked`);
-	} else {
-		logger.logInfo(`   [MOD] -- Armor Stacking: Default`);
-	}
-
-
-	
-	//ExfiltrationType = Individual, SharedTimer, Manual
-	//PassageRequirement = None, Empty, TransferItem, WorldEvent, ScavCooperation
-		//TransferItem requires you put itemID of item needed for PassageRequirement, Count is Amount of Item
-		//RequirementTip = Tooltip that tells you what you need
-
-
-	fileIO.write(db.user.cache.locations, locationfile);
+fileIO.write(db.user.cache.locations, locationfile);
 	fileIO.write(db.user.cache.items, itemfile);
-	logger.logInfo(`   [MOD] Loaded: ${mod_info.name} (${mod_info.version}) by ${mod_info.author}`);
+	logger.logSuccess(`   [MOD] Loaded: ${mod_info.name} (${mod_info.version}) by ${mod_info.author}`);
 }
 
