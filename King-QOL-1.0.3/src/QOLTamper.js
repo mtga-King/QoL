@@ -330,5 +330,5 @@ exports.mod = (mod_info) => {
 	}
 
 	fileIO.write(global.db.base.globals, globals);
-	logger.logInfo(`   [MOD] Loaded: ${mod_info.name} (${mod_info.version}) by ${mod_info.author}`);
+	logger.logSuccess(`   [MOD] Loaded: ${mod_info.name} (${mod_info.version}) by ${mod_info.author}`);
 }
