@@ -68,10 +68,10 @@ exports.mod = (mod_info) => {
 			globals.data.config.TimeBeforeDeployLocal = 0 //make 0 (zero)
 		} 
 	}	else { //if false, reset to default
-			if(globals.data.config.TimeBeforeDeploy != 0){
+			if(globals.data.config.TimeBeforeDeploy != 20 ){
 				globals.data.config.TimeBeforeDeploy = 20
 			}
-			if(globals.data.config.TimeBeforeDeployLocal != 0){
+			if(globals.data.config.TimeBeforeDeployLocal != 10){
 				globals.data.config.TimeBeforeDeployLocal = 10
 			}
 		}
