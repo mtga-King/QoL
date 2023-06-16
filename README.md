@@ -1,4 +1,4 @@
-# QOL (Ver.1.0.3)
+# QOL
 ------------------
 for JET v1.1.1
 by King
